@@ -30,9 +30,21 @@ Requirements:
   </div>
   <div class="container-fluid d-flex justify-content-center align-items-center">
     <div class="row">
-      <div class="col-4"><button role="img" aria-label="rock" class="btn" value="rock">🗿</button></div>
-      <div class="col-4"><button role="img" aria-label="paper" class="btn" value="paper">📝</button></div>
-      <div class="col-4"><button role="img" aria-label="scissors" class="btn" value="scissors">✂️</button></div>
+      <div class="col-4">
+        <button role="img" aria-label="rock" class="btn" value="rock" onclick="shoot('rock')">🗿</button>
+      </div>
+      <div class="col-4">
+        <button role="img" aria-label="paper" class="btn" value="paper" onclick="shoot('paper')">📝</button>
+      </div>
+      <div class="col-4">
+        <button role="img" aria-label="scissors" class="btn" value="scissors" onclick="shoot('scissors')">✂️</button>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-center">
+    <div class="row">
+      <p id="results"></p>
+      <p id="winner"></p>
     </div>
   </div>
 
@@ -40,11 +52,35 @@ Requirements:
     let buttonStyle = document.querySelector("btn");
     buttonStyle.style.outline = "thick solid #89CFF0";
 
-    function shoot() {
-      let user = document.querySelector(button[class="btn"]).value;
-      let computer =
-    }
+    function shoot(value) {
+      let user = value;
+      const choices = new Array("rock", "paper", "scissors");
+      let computer = choices[Math.floor(Math.random() * choices.length)];
 
+      document.getElementById("results").innerText = `${user} vs. ${computer}`;
+
+      if (user === computer) {
+        document.getElementById("winner").innerText = "It's a tie!";
+      }
+      if (user === "rock" && computer === "paper") {
+        document.getElementById("winner").innerText = "Paper wins!";
+      }
+      if (user === "rock" && computer === "scissors") {
+        document.getElementById("winner").innerText = "Rock wins!";
+      }
+      if (user === "paper" && computer === "scissors") {
+        document.getElementById("winner").innerText = "Scissors wins!";
+      }
+      if (user === "paper" && computer === "rock") {
+        document.getElementById("winner").innerText = "Paper wins!";
+      }
+      if (user === "scissors" && computer === "rock") {
+        document.getElementById("winner").innerText = "Rock wins!";
+      }
+      if (user === "scissors" && computer === "paper") {
+        document.getElementById("winner").innerText = "Scissors wins!";
+      }
+    }
   </script>
 
 </body>
