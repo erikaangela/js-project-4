@@ -25,22 +25,25 @@ Requirements:
 <body>
   <div class="container-fluid text-center pt-5">
     <div class="row">
-      <p id="text">Choose to play:</p>
+      <p>Choose to play:</p>
     </div>
   </div>
   <div class="container-fluid d-flex justify-content-center align-items-center">
     <div class="row">
-      <div class="col-4"><button role="img" aria-label="rock" class="btn">🗿</button></div>
-      <div class="col-4"><button role="img" aria-label="paper" class="btn">📝</button></div>
-      <div class="col-4"><button role="img" aria-label="scissors" class="btn">✂️</button></div>
+      <div class="col-4"><button role="img" aria-label="rock" class="btn" value="rock">🗿</button></div>
+      <div class="col-4"><button role="img" aria-label="paper" class="btn" value="paper">📝</button></div>
+      <div class="col-4"><button role="img" aria-label="scissors" class="btn" value="scissors">✂️</button></div>
     </div>
   </div>
 
   <script>
-    let buttonStyle = document.querySelectorAll("btn");
+    let buttonStyle = document.querySelector("btn");
     buttonStyle.style.outline = "thick solid #89CFF0";
-    let textStyle = document.getElementById("text");
-    textStyle.style.fontWeight = "900";
+
+    function shoot() {
+      let user = document.querySelector(button[class="btn"]).value;
+      let computer =
+    }
 
   </script>
 
