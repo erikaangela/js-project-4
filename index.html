@@ -19,7 +19,7 @@ Requirements:
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> <!-- JAVASCRIPT -->
-
+  <title>Rock, Paper, Scissors</title>
 </head>
 
 <body>
@@ -48,40 +48,7 @@ Requirements:
     </div>
   </div>
 
-  <script>
-    let buttonStyle = document.querySelector("btn");
-    buttonStyle.style.outline = "thick solid #89CFF0";
-
-    function shoot(value) {
-      let user = value;
-      const choices = new Array("rock", "paper", "scissors");
-      let computer = choices[Math.floor(Math.random() * choices.length)];
-
-      document.getElementById("results").innerText = `${user} vs. ${computer}`;
-
-      if (user === computer) {
-        document.getElementById("winner").innerText = "It's a tie!";
-      }
-      if (user === "rock" && computer === "paper") {
-        document.getElementById("winner").innerText = "Paper wins!";
-      }
-      if (user === "rock" && computer === "scissors") {
-        document.getElementById("winner").innerText = "Rock wins!";
-      }
-      if (user === "paper" && computer === "scissors") {
-        document.getElementById("winner").innerText = "Scissors wins!";
-      }
-      if (user === "paper" && computer === "rock") {
-        document.getElementById("winner").innerText = "Paper wins!";
-      }
-      if (user === "scissors" && computer === "rock") {
-        document.getElementById("winner").innerText = "Rock wins!";
-      }
-      if (user === "scissors" && computer === "paper") {
-        document.getElementById("winner").innerText = "Scissors wins!";
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 
 </body>
 
